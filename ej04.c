@@ -3,5 +3,6 @@
 
 void display(){
   char** cuad = repeatH(join(reverse(whiteSquare),whiteSquare),4);
-  interpreter(cuad);
+  char** piezas = join(rook, knight);
+  interpreter(piezas);
 }

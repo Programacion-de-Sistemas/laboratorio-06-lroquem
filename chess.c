@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "chess.h"
 
+char** res = NULL;
+
 char** flipV(char** fig){
   int row, col, i, j = 0;
   while(fig[j]){
@@ -11,11 +13,31 @@ char** flipV(char** fig){
     }
     j++;
   }
+
+  //printf("ji: %d\t%d\n", j, i);
   row=j+1;
   col=i;
-  printf("%d\t%d\n", row, col);
-  char** res = (char**)malloc(sizeof(char*) * row);
-  while(res[j])
+  //printf("rc: %d\t%d\n", row, col);
+  res = (char**)malloc(sizeof(char*) * row);
+
+  for(j = 0; j < row; j++){
     res[j] = (char*)malloc(sizeof(char) * col);
-  return res;
+  }  
+
+  //printf("wj: %d\n", j);
+
+  for(j = 0; j < row; j++){
+    for(i = 0; i < col; i++){
+      res[j][i] = '#';
+      printf("%c",res[j][i]);
+    }
+    printf("\n");
+  }
+
+  printf("asig ji: %d\t%d\n", j, i);
+  //printf("%c\n",res[10][10]);
+  //res[j][0] = '0';
+  printf("despues res[j]");
+  printf("hola");
+  return NULL;
 }
